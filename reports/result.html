@@ -1,0 +1,2680 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+				<li class='waves-effect'><a href='#!' view='author-view' onclick="configureView(3)"><i class='material-icons'>person</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>May 21, 2018 12:15:35 AM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.3</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>Smoke</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='41.935%'><span class='strong'>13</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='58.065%'>18</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='90.055%'><span class='strong'>163</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='9.945%'>18</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 3, 2018 04:25:36 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 3, 2018 04:25:36 PM</span>
+	<span class='label end-time'>May 3, 2018 04:26:21 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 45s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='2'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+413ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:26:19 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/274131055.jpg" width="10%" src="./../reports/images/274131055.jpg" data-src="./../reports/images/274131055.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>4:26:20 PM</td>
+													<td class='step-details'>Unknown exception occured while entering Sunglasses in the field :Proxy element for: DefaultElementLocator 'By.xpath: //*[@id=\"desktop-header-cnt\"]/div[2]/div[3]/input'<img data-featherlight="./../reports/images/494861323.jpg" width="10%" src="./../reports/images/494861323.jpg" data-src="./../reports/images/494861323.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:26:21 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 6, 2018 06:24:07 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 6, 2018 06:24:07 PM</span>
+	<span class='label end-time'>May 6, 2018 06:25:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 39s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='4'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+429ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:25:45 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/815537661.jpg" width="10%" src="./../reports/images/815537661.jpg" data-src="./../reports/images/815537661.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:25:46 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 6, 2018 06:25:59 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 6, 2018 06:25:59 PM</span>
+	<span class='label end-time'>May 6, 2018 06:28:47 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 48s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='6'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+437ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:28:45 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/417819896.jpg" width="10%" src="./../reports/images/417819896.jpg" data-src="./../reports/images/417819896.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>6:28:46 PM</td>
+													<td class='step-details'>Unknown exception occured while entering Sunglasses in the field :Proxy element for: DefaultElementLocator 'By.xpath: //*[@id=\"desktop-header-cnt\"]/div[2]/div[3]/input'<img data-featherlight="./../reports/images/137827756.jpg" width="10%" src="./../reports/images/137827756.jpg" data-src="./../reports/images/137827756.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:28:47 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 6, 2018 06:43:23 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 6, 2018 06:43:23 PM</span>
+	<span class='label end-time'>May 6, 2018 06:45:40 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 17s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='8'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+446ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:45:38 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/829070189.jpg" width="10%" src="./../reports/images/829070189.jpg" data-src="./../reports/images/829070189.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>6:45:39 PM</td>
+													<td class='step-details'>Unknown exception occured while entering Sunglasses in the field :Proxy element for: DefaultElementLocator 'By.xpath: //*[@id=\"desktop-header-cnt\"]/div[2]/div[3]/input'<img data-featherlight="./../reports/images/377404836.jpg" width="10%" src="./../reports/images/377404836.jpg" data-src="./../reports/images/377404836.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:45:40 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 6, 2018 07:01:57 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 6, 2018 07:01:57 PM</span>
+	<span class='label end-time'>May 6, 2018 07:04:19 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 22s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='10'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+454ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:04:17 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/758534674.jpg" width="10%" src="./../reports/images/758534674.jpg" data-src="./../reports/images/758534674.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>7:04:18 PM</td>
+													<td class='step-details'>Unknown exception occured while entering Sunglasses in the field :Proxy element for: DefaultElementLocator 'By.xpath: //*[@id=\"desktop-header-cnt\"]/div[2]/div[3]/input'<img data-featherlight="./../reports/images/68916927.jpg" width="10%" src="./../reports/images/68916927.jpg" data-src="./../reports/images/68916927.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:04:19 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 11, 2018 08:50:08 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 11, 2018 08:50:08 AM</span>
+	<span class='label end-time'>May 11, 2018 08:50:25 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='12'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+462ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:50:23 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/815732606.jpg" width="10%" src="./../reports/images/815732606.jpg" data-src="./../reports/images/815732606.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>8:50:24 AM</td>
+													<td class='step-details'>Unknown exception occured while entering Sunglasses in the field :Proxy element for: DefaultElementLocator 'By.xpath: //*[@id=\"desktop-header-cnt\"]/div[2]/div[3]/input'<img data-featherlight="./../reports/images/51247691.jpg" width="10%" src="./../reports/images/51247691.jpg" data-src="./../reports/images/51247691.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:50:25 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 12, 2018 04:12:18 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 12, 2018 04:12:18 PM</span>
+	<span class='label end-time'>May 12, 2018 04:12:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='14'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+470ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:12:37 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/118965217.jpg" width="10%" src="./../reports/images/118965217.jpg" data-src="./../reports/images/118965217.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>4:12:38 PM</td>
+													<td class='step-details'>Unknown exception occured while entering Sunglasses in the field :Proxy element for: DefaultElementLocator 'By.xpath: //*[@id=\"desktop-header-cnt\"]/div[2]/div[3]/input'<img data-featherlight="./../reports/images/155755213.jpg" width="10%" src="./../reports/images/155755213.jpg" data-src="./../reports/images/155755213.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:12:39 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 12, 2018 04:13:41 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 12, 2018 04:13:41 PM</span>
+	<span class='label end-time'>May 12, 2018 04:13:57 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='16'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+477ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:13:55 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/361772983.jpg" width="10%" src="./../reports/images/361772983.jpg" data-src="./../reports/images/361772983.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>4:13:56 PM</td>
+													<td class='step-details'>Unknown exception occured while entering Sunglasses in the field :Proxy element for: DefaultElementLocator 'By.xpath: //*[@id=\"desktop-header-cnt\"]/div[2]/div[3]/input'<img data-featherlight="./../reports/images/42661897.jpg" width="10%" src="./../reports/images/42661897.jpg" data-src="./../reports/images/42661897.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:13:57 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 12, 2018 04:59:50 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 12, 2018 04:59:50 PM</span>
+	<span class='label end-time'>May 12, 2018 05:00:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='18'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+484ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:00:08 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/352373274.jpg" width="10%" src="./../reports/images/352373274.jpg" data-src="./../reports/images/352373274.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>5:00:09 PM</td>
+													<td class='step-details'>Unknown exception occured while entering Sunglasses in the field :Proxy element for: DefaultElementLocator 'By.xpath: //*[@id=\"desktop-header-cnt\"]/div[2]/div[3]/input'<img data-featherlight="./../reports/images/83303218.jpg" width="10%" src="./../reports/images/83303218.jpg" data-src="./../reports/images/83303218.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:00:10 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 12, 2018 05:04:20 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 12, 2018 05:04:20 PM</span>
+	<span class='label end-time'>May 12, 2018 05:05:19 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 59s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='20'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+490ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:05:17 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/221885138.jpg" width="10%" src="./../reports/images/221885138.jpg" data-src="./../reports/images/221885138.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>5:05:18 PM</td>
+													<td class='step-details'>Unknown exception occured while entering Sunglasses in the field :Proxy element for: DefaultElementLocator 'By.xpath: //*[@id=\"desktop-header-cnt\"]/div[2]/div[3]/input'<img data-featherlight="./../reports/images/83908801.jpg" width="10%" src="./../reports/images/83908801.jpg" data-src="./../reports/images/83908801.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:05:19 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 12, 2018 07:14:12 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 12, 2018 07:14:12 PM</span>
+	<span class='label end-time'>May 12, 2018 07:14:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='22'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+497ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:14:26 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/314407401.jpg" width="10%" src="./../reports/images/314407401.jpg" data-src="./../reports/images/314407401.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>7:14:27 PM</td>
+													<td class='step-details'>Unknown exception occured while entering Sunglasses in the field :Proxy element for: DefaultElementLocator 'By.xpath: //*[@id=\"desktop-header-cnt\"]/div[2]/div[3]/input'<img data-featherlight="./../reports/images/354273784.jpg" width="10%" src="./../reports/images/354273784.jpg" data-src="./../reports/images/354273784.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:14:28 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 12, 2018 07:22:31 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 12, 2018 07:22:31 PM</span>
+	<span class='label end-time'>May 12, 2018 07:23:12 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 41s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='24'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+503ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:22:48 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/270144182.jpg" width="10%" src="./../reports/images/270144182.jpg" data-src="./../reports/images/270144182.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:22:50 PM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (d81302e82aa3c5d6934c7ee68f1b8666)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/488813964.jpg" width="10%" src="./../reports/images/488813964.jpg" data-src="./../reports/images/488813964.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>7:23:11 PM</td>
+													<td class='step-details'>Unknown exception occured while clicking in the field :<img data-featherlight="./../reports/images/609568252.jpg" width="10%" src="./../reports/images/609568252.jpg" data-src="./../reports/images/609568252.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:23:12 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 12, 2018 07:24:25 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 12, 2018 07:24:25 PM</span>
+	<span class='label end-time'>May 12, 2018 07:25:03 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 38s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='26'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+510ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:24:39 PM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/869938327.jpg" width="10%" src="./../reports/images/869938327.jpg" data-src="./../reports/images/869938327.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:24:41 PM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (6c50644f17ce75a1e0675b35ac0e1be5)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/878136584.jpg" width="10%" src="./../reports/images/878136584.jpg" data-src="./../reports/images/878136584.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>7:25:02 PM</td>
+													<td class='step-details'>Unknown exception occured while clicking in the field :<img data-featherlight="./../reports/images/635757313.jpg" width="10%" src="./../reports/images/635757313.jpg" data-src="./../reports/images/635757313.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:25:03 PM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='27'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 02:36:53 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 02:36:53 AM</span>
+	<span class='label end-time'>May 13, 2018 02:37:52 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 59s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='28'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+517ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:37:25 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/263959038.jpg" width="10%" src="./../reports/images/263959038.jpg" data-src="./../reports/images/263959038.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:37:29 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (17276c6f98a8c6921b03d5d1876976dc)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/391512007.jpg" width="10%" src="./../reports/images/391512007.jpg" data-src="./../reports/images/391512007.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>2:37:51 AM</td>
+													<td class='step-details'>Unknown exception occured while clicking in the field :<img data-featherlight="./../reports/images/481209686.jpg" width="10%" src="./../reports/images/481209686.jpg" data-src="./../reports/images/481209686.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:37:52 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='29'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 02:43:55 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 02:43:55 AM</span>
+	<span class='label end-time'>May 13, 2018 02:44:32 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='30'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+525ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:44:18 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/254116925.jpg" width="10%" src="./../reports/images/254116925.jpg" data-src="./../reports/images/254116925.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:44:21 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (721f6dc9f7cf7546c9d80a48262f91e8)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/640073672.jpg" width="10%" src="./../reports/images/640073672.jpg" data-src="./../reports/images/640073672.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>2:44:31 AM</td>
+													<td class='step-details'>Unknown exception occured while clicking in the field :<img data-featherlight="./../reports/images/416461703.jpg" width="10%" src="./../reports/images/416461703.jpg" data-src="./../reports/images/416461703.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:44:32 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 02:46:03 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 02:46:03 AM</span>
+	<span class='label end-time'>May 13, 2018 02:46:36 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 33s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='32'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+538ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:46:19 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/219622110.jpg" width="10%" src="./../reports/images/219622110.jpg" data-src="./../reports/images/219622110.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:46:22 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (d7d42b8a747bf44cc57f2dc9bf9c8cc7)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/210995612.jpg" width="10%" src="./../reports/images/210995612.jpg" data-src="./../reports/images/210995612.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:46:27 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/98256384.jpg" width="10%" src="./../reports/images/98256384.jpg" data-src="./../reports/images/98256384.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:46:29 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/588094264.jpg" width="10%" src="./../reports/images/588094264.jpg" data-src="./../reports/images/588094264.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:46:31 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/139570051.jpg" width="10%" src="./../reports/images/139570051.jpg" data-src="./../reports/images/139570051.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:46:35 AM</td>
+													<td class='step-details'>The element Pepe Jeans Unisex Square Sunglasses Rs. 1149Rs. 2299(50% OFF) is clicked<img data-featherlight="./../reports/images/275002541.jpg" width="10%" src="./../reports/images/275002541.jpg" data-src="./../reports/images/275002541.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:46:36 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='33'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 03:09:16 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 03:09:16 AM</span>
+	<span class='label end-time'>May 13, 2018 03:09:40 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 24s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='34'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+547ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:09:29 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/803832132.jpg" width="10%" src="./../reports/images/803832132.jpg" data-src="./../reports/images/803832132.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:09:31 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (f985356407d7fde7798be5d36d295641)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/826814776.jpg" width="10%" src="./../reports/images/826814776.jpg" data-src="./../reports/images/826814776.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:09:37 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/807404592.jpg" width="10%" src="./../reports/images/807404592.jpg" data-src="./../reports/images/807404592.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:09:38 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/288946822.jpg" width="10%" src="./../reports/images/288946822.jpg" data-src="./../reports/images/288946822.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>3:09:40 AM</td>
+													<td class='step-details'>Unknown exception occured while clicking in the field :<img data-featherlight="./../reports/images/744650502.jpg" width="10%" src="./../reports/images/744650502.jpg" data-src="./../reports/images/744650502.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:09:40 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='35'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 03:09:57 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 03:09:57 AM</span>
+	<span class='label end-time'>May 13, 2018 03:10:23 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 26s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='36'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+554ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:10:10 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/291893530.jpg" width="10%" src="./../reports/images/291893530.jpg" data-src="./../reports/images/291893530.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:10:12 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (957da6d6ac7d348f18ffb0fd105a8304)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/52196327.jpg" width="10%" src="./../reports/images/52196327.jpg" data-src="./../reports/images/52196327.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:10:20 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/834896696.jpg" width="10%" src="./../reports/images/834896696.jpg" data-src="./../reports/images/834896696.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:10:21 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/77977689.jpg" width="10%" src="./../reports/images/77977689.jpg" data-src="./../reports/images/77977689.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>3:10:23 AM</td>
+													<td class='step-details'>Unknown exception occured while clicking in the field :<img data-featherlight="./../reports/images/162678058.jpg" width="10%" src="./../reports/images/162678058.jpg" data-src="./../reports/images/162678058.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:10:23 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='37'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 03:12:33 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 03:12:33 AM</span>
+	<span class='label end-time'>May 13, 2018 03:13:27 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 54s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='38'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+562ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:12:45 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/293031413.jpg" width="10%" src="./../reports/images/293031413.jpg" data-src="./../reports/images/293031413.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:12:47 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (b4976779b3ca0b34e133fc9d532494b7)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/70243001.jpg" width="10%" src="./../reports/images/70243001.jpg" data-src="./../reports/images/70243001.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:12:54 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/238277768.jpg" width="10%" src="./../reports/images/238277768.jpg" data-src="./../reports/images/238277768.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:12:55 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/374679613.jpg" width="10%" src="./../reports/images/374679613.jpg" data-src="./../reports/images/374679613.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:13:00 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/404827859.jpg" width="10%" src="./../reports/images/404827859.jpg" data-src="./../reports/images/404827859.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:13:04 AM</td>
+													<td class='step-details'>The element Mast &amp; Harbour Unisex Wayfarer Sunglasses Rs. 519Rs. 1299(60% OFF) is clicked<img data-featherlight="./../reports/images/541991671.jpg" width="10%" src="./../reports/images/541991671.jpg" data-src="./../reports/images/541991671.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:13:06 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/881205369.jpg" width="10%" src="./../reports/images/881205369.jpg" data-src="./../reports/images/881205369.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>3:13:26 AM</td>
+													<td class='step-details'>Unknown exception occured while clicking in the field :<img data-featherlight="./../reports/images/770217256.jpg" width="10%" src="./../reports/images/770217256.jpg" data-src="./../reports/images/770217256.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:13:27 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='39'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 03:42:12 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 03:42:12 AM</span>
+	<span class='label end-time'>May 13, 2018 03:43:10 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 58s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf fail' status='fail' test-id='40'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+571ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:42:24 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/721184272.jpg" width="10%" src="./../reports/images/721184272.jpg" data-src="./../reports/images/721184272.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:42:26 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (69b9563a8c674698a7f4fc04f593c751)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/24723010.jpg" width="10%" src="./../reports/images/24723010.jpg" data-src="./../reports/images/24723010.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:42:32 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/319278656.jpg" width="10%" src="./../reports/images/319278656.jpg" data-src="./../reports/images/319278656.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:42:34 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/894423985.jpg" width="10%" src="./../reports/images/894423985.jpg" data-src="./../reports/images/894423985.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:42:38 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/423986588.jpg" width="10%" src="./../reports/images/423986588.jpg" data-src="./../reports/images/423986588.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:42:43 AM</td>
+													<td class='step-details'>The element Pepe Jeans Unisex Square Sunglasses Rs. 1149Rs. 2299(50% OFF) Sizes: S SAVE ADD TO BAG is clicked<img data-featherlight="./../reports/images/382891301.jpg" width="10%" src="./../reports/images/382891301.jpg" data-src="./../reports/images/382891301.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:42:45 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/219884297.jpg" width="10%" src="./../reports/images/219884297.jpg" data-src="./../reports/images/219884297.jpg"></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>3:43:09 AM</td>
+													<td class='step-details'>Unknown exception occured while clicking in the field :<img data-featherlight="./../reports/images/643205260.jpg" width="10%" src="./../reports/images/643205260.jpg" data-src="./../reports/images/643205260.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:43:10 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='41'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 03:44:22 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 03:44:22 AM</span>
+	<span class='label end-time'>May 13, 2018 03:45:04 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 42s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='42'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+580ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:44:35 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/907833594.jpg" width="10%" src="./../reports/images/907833594.jpg" data-src="./../reports/images/907833594.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:44:37 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (424cd6d73ccfb0c437763e3c3e47200b)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/428890467.jpg" width="10%" src="./../reports/images/428890467.jpg" data-src="./../reports/images/428890467.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:44:44 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/509020200.jpg" width="10%" src="./../reports/images/509020200.jpg" data-src="./../reports/images/509020200.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:44:46 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/734641609.jpg" width="10%" src="./../reports/images/734641609.jpg" data-src="./../reports/images/734641609.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:44:50 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/37891746.jpg" width="10%" src="./../reports/images/37891746.jpg" data-src="./../reports/images/37891746.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:44:55 AM</td>
+													<td class='step-details'>The element Pepe Jeans Unisex Square Sunglasses Rs. 1149Rs. 2299(50% OFF) is clicked<img data-featherlight="./../reports/images/803563875.jpg" width="10%" src="./../reports/images/803563875.jpg" data-src="./../reports/images/803563875.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:44:57 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/269968336.jpg" width="10%" src="./../reports/images/269968336.jpg" data-src="./../reports/images/269968336.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:45:03 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/502957424.jpg" width="10%" src="./../reports/images/502957424.jpg" data-src="./../reports/images/502957424.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:45:04 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='43'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 03:52:52 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 03:52:52 AM</span>
+	<span class='label end-time'>May 13, 2018 03:53:34 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 42s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='44'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+589ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:08 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/718978230.jpg" width="10%" src="./../reports/images/718978230.jpg" data-src="./../reports/images/718978230.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:10 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (65c753fbe14c54fe813e13732dafd5e1)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/368481355.jpg" width="10%" src="./../reports/images/368481355.jpg" data-src="./../reports/images/368481355.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:15 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/849064748.jpg" width="10%" src="./../reports/images/849064748.jpg" data-src="./../reports/images/849064748.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:16 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/347114464.jpg" width="10%" src="./../reports/images/347114464.jpg" data-src="./../reports/images/347114464.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:21 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/709597146.jpg" width="10%" src="./../reports/images/709597146.jpg" data-src="./../reports/images/709597146.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:25 AM</td>
+													<td class='step-details'>The element Pepe Jeans Unisex Square Sunglasses Rs. 1149Rs. 2299(50% OFF) is clicked<img data-featherlight="./../reports/images/759577746.jpg" width="10%" src="./../reports/images/759577746.jpg" data-src="./../reports/images/759577746.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:27 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/603003726.jpg" width="10%" src="./../reports/images/603003726.jpg" data-src="./../reports/images/603003726.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:33 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/398364115.jpg" width="10%" src="./../reports/images/398364115.jpg" data-src="./../reports/images/398364115.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:34 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='45'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 03:58:07 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 03:58:07 AM</span>
+	<span class='label end-time'>May 13, 2018 03:58:47 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 40s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='46'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+598ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:18 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/583609082.jpg" width="10%" src="./../reports/images/583609082.jpg" data-src="./../reports/images/583609082.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:21 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (88a300424ed8bc87d3653d26f65787e4)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/28016140.jpg" width="10%" src="./../reports/images/28016140.jpg" data-src="./../reports/images/28016140.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:26 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/112807244.jpg" width="10%" src="./../reports/images/112807244.jpg" data-src="./../reports/images/112807244.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:28 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/845636905.jpg" width="10%" src="./../reports/images/845636905.jpg" data-src="./../reports/images/845636905.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:33 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/799290777.jpg" width="10%" src="./../reports/images/799290777.jpg" data-src="./../reports/images/799290777.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:38 AM</td>
+													<td class='step-details'>The element Pepe Jeans Unisex Square Sunglasses Rs. 1149Rs. 2299(50% OFF) is clicked<img data-featherlight="./../reports/images/469680857.jpg" width="10%" src="./../reports/images/469680857.jpg" data-src="./../reports/images/469680857.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:39 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/203072859.jpg" width="10%" src="./../reports/images/203072859.jpg" data-src="./../reports/images/203072859.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:46 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/249215612.jpg" width="10%" src="./../reports/images/249215612.jpg" data-src="./../reports/images/249215612.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:47 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='47'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 04:00:53 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 04:00:53 AM</span>
+	<span class='label end-time'>May 13, 2018 04:01:36 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 43s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='48'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+606ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:06 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/333741041.jpg" width="10%" src="./../reports/images/333741041.jpg" data-src="./../reports/images/333741041.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:08 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (54759f17d5250251426799cfeb65e29c)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/334364609.jpg" width="10%" src="./../reports/images/334364609.jpg" data-src="./../reports/images/334364609.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:17 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/508648030.jpg" width="10%" src="./../reports/images/508648030.jpg" data-src="./../reports/images/508648030.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:18 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/631883216.jpg" width="10%" src="./../reports/images/631883216.jpg" data-src="./../reports/images/631883216.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:22 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/285761221.jpg" width="10%" src="./../reports/images/285761221.jpg" data-src="./../reports/images/285761221.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:27 AM</td>
+													<td class='step-details'>The element Roadster Unisex Wayfarer sunglasses Rs. 539Rs. 899(40% OFF) is clicked<img data-featherlight="./../reports/images/538494852.jpg" width="10%" src="./../reports/images/538494852.jpg" data-src="./../reports/images/538494852.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:28 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/555171114.jpg" width="10%" src="./../reports/images/555171114.jpg" data-src="./../reports/images/555171114.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:35 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/878372130.jpg" width="10%" src="./../reports/images/878372130.jpg" data-src="./../reports/images/878372130.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:36 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='49'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 04:01:53 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 04:01:53 AM</span>
+	<span class='label end-time'>May 13, 2018 04:02:36 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 43s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='50'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+615ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:06 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/290258118.jpg" width="10%" src="./../reports/images/290258118.jpg" data-src="./../reports/images/290258118.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:08 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (6fffaec48a69de8d43be83c823e87dea)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/888929940.jpg" width="10%" src="./../reports/images/888929940.jpg" data-src="./../reports/images/888929940.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:13 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/67021907.jpg" width="10%" src="./../reports/images/67021907.jpg" data-src="./../reports/images/67021907.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:15 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/441737691.jpg" width="10%" src="./../reports/images/441737691.jpg" data-src="./../reports/images/441737691.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:19 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/480669991.jpg" width="10%" src="./../reports/images/480669991.jpg" data-src="./../reports/images/480669991.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:25 AM</td>
+													<td class='step-details'>The element Pepe Jeans Unisex Square Sunglasses Rs. 1149Rs. 2299(50% OFF) is clicked<img data-featherlight="./../reports/images/449326277.jpg" width="10%" src="./../reports/images/449326277.jpg" data-src="./../reports/images/449326277.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:26 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/280912537.jpg" width="10%" src="./../reports/images/280912537.jpg" data-src="./../reports/images/280912537.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:35 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/13735868.jpg" width="10%" src="./../reports/images/13735868.jpg" data-src="./../reports/images/13735868.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:36 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='51'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 04:04:21 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 04:04:21 AM</span>
+	<span class='label end-time'>May 13, 2018 04:04:57 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 36s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='52'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+623ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:32 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/767490417.jpg" width="10%" src="./../reports/images/767490417.jpg" data-src="./../reports/images/767490417.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:34 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (104260ce600d3a97d77177589632401d)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/739431067.jpg" width="10%" src="./../reports/images/739431067.jpg" data-src="./../reports/images/739431067.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:39 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/490527084.jpg" width="10%" src="./../reports/images/490527084.jpg" data-src="./../reports/images/490527084.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:40 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/852997780.jpg" width="10%" src="./../reports/images/852997780.jpg" data-src="./../reports/images/852997780.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:45 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/81597621.jpg" width="10%" src="./../reports/images/81597621.jpg" data-src="./../reports/images/81597621.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:49 AM</td>
+													<td class='step-details'>The element Mast &amp; Harbour Unisex Wayfarer Sunglasses Rs. 519Rs. 1299(60% OFF) is clicked<img data-featherlight="./../reports/images/76064966.jpg" width="10%" src="./../reports/images/76064966.jpg" data-src="./../reports/images/76064966.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:50 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/251961118.jpg" width="10%" src="./../reports/images/251961118.jpg" data-src="./../reports/images/251961118.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:56 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/252850252.jpg" width="10%" src="./../reports/images/252850252.jpg" data-src="./../reports/images/252850252.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:57 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='53'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 13, 2018 04:10:42 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 13, 2018 04:10:42 AM</span>
+	<span class='label end-time'>May 13, 2018 04:11:21 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 39s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='54'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+632ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:10:56 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/638834764.jpg" width="10%" src="./../reports/images/638834764.jpg" data-src="./../reports/images/638834764.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:10:58 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (45316228b4ac232cb3b7c230c4a78b4d)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/41747014.jpg" width="10%" src="./../reports/images/41747014.jpg" data-src="./../reports/images/41747014.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:11:03 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/765900728.jpg" width="10%" src="./../reports/images/765900728.jpg" data-src="./../reports/images/765900728.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:11:04 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/628192984.jpg" width="10%" src="./../reports/images/628192984.jpg" data-src="./../reports/images/628192984.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:11:09 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/103235410.jpg" width="10%" src="./../reports/images/103235410.jpg" data-src="./../reports/images/103235410.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:11:13 AM</td>
+													<td class='step-details'>The element Pepe Jeans Unisex Square Sunglasses Rs. 1149Rs. 2299(50% OFF) is clicked<img data-featherlight="./../reports/images/325069039.jpg" width="10%" src="./../reports/images/325069039.jpg" data-src="./../reports/images/325069039.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:11:15 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/637242014.jpg" width="10%" src="./../reports/images/637242014.jpg" data-src="./../reports/images/637242014.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:11:20 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/342012124.jpg" width="10%" src="./../reports/images/342012124.jpg" data-src="./../reports/images/342012124.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:11:21 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='55'>
+					<div class='test-heading'>
+						<span class='test-name'>TC001_MyntraHomePage</span>
+						<span class='test-time'>May 14, 2018 12:15:34 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 14, 2018 12:15:34 AM</span>
+	<span class='label end-time'>May 14, 2018 12:16:45 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 11s+0ms</span>
+</div>
+	<div class='test-desc'>veryfy Myntra home </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='56'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Home</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+640ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:12 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/852966510.jpg" width="10%" src="./../reports/images/852966510.jpg" data-src="./../reports/images/852966510.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:16 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (5154e225fdf0f1ef2e979bc043d0392e)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/339443295.jpg" width="10%" src="./../reports/images/339443295.jpg" data-src="./../reports/images/339443295.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:23 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/541083136.jpg" width="10%" src="./../reports/images/541083136.jpg" data-src="./../reports/images/541083136.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:25 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/366604990.jpg" width="10%" src="./../reports/images/366604990.jpg" data-src="./../reports/images/366604990.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:29 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/117749194.jpg" width="10%" src="./../reports/images/117749194.jpg" data-src="./../reports/images/117749194.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:35 AM</td>
+													<td class='step-details'>The element Pepe Jeans Unisex Square Sunglasses Rs. 1264Rs. 2299(45% OFF) is clicked<img data-featherlight="./../reports/images/290908630.jpg" width="10%" src="./../reports/images/290908630.jpg" data-src="./../reports/images/290908630.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:37 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/33441844.jpg" width="10%" src="./../reports/images/33441844.jpg" data-src="./../reports/images/33441844.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:44 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/210256295.jpg" width="10%" src="./../reports/images/210256295.jpg" data-src="./../reports/images/210256295.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:45 AM</td>
+													<td class='step-details'>The opened browsers are closed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='57'>
+					<div class='test-heading'>
+						<span class='test-name'>Order a Green Color Sunglass and compare Price of item and value in cart</span>
+						<span class='test-time'>May 14, 2018 01:56:03 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 14, 2018 01:56:03 AM</span>
+	<span class='label end-time'>May 14, 2018 01:56:46 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 43s+0ms</span>
+</div>
+	<div class='test-desc'>src/main/java/myntraFeatureFile/MyntraFeature.feature:3 </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='58'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Order a Green Color Sunglass and compare Price of item and value in cart</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 59s+653ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:56:20 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/517535514.jpg" width="10%" src="./../reports/images/517535514.jpg" data-src="./../reports/images/517535514.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:56:22 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (d1c3ef48306701ff51df549cd18e4d75)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/807179384.jpg" width="10%" src="./../reports/images/807179384.jpg" data-src="./../reports/images/807179384.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:56:27 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/287083706.jpg" width="10%" src="./../reports/images/287083706.jpg" data-src="./../reports/images/287083706.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:56:29 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight="./../reports/images/346238760.jpg" width="10%" src="./../reports/images/346238760.jpg" data-src="./../reports/images/346238760.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:56:33 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/457820447.jpg" width="10%" src="./../reports/images/457820447.jpg" data-src="./../reports/images/457820447.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:56:38 AM</td>
+													<td class='step-details'>The element Pepe Jeans Unisex Square Sunglasses Rs. 1264Rs. 2299(45% OFF) is clicked<img data-featherlight="./../reports/images/449509153.jpg" width="10%" src="./../reports/images/449509153.jpg" data-src="./../reports/images/449509153.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:56:40 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/356137586.jpg" width="10%" src="./../reports/images/356137586.jpg" data-src="./../reports/images/356137586.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:56:46 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/465959349.jpg" width="10%" src="./../reports/images/465959349.jpg" data-src="./../reports/images/465959349.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='59'>
+					<div class='test-heading'>
+						<span class='test-name'>Order a Green Color Sunglass and compare Price of item and value in cart</span>
+						<span class='test-time'>May 14, 2018 01:58:37 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 14, 2018 01:58:37 AM</span>
+	<span class='label end-time'>May 14, 2018 01:59:18 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 41s+0ms</span>
+</div>
+	<div class='test-desc'>E:/selenium/Myntra/src/main/java/myntraFeatureFile/MyntraFeature.feature:3 </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='60'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Order a Green Color Sunglass and compare Price of item and value in cart</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:15:36 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>166h 16m 18s+660ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:58:50 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight="./../reports/images/425243815.jpg" width="10%" src="./../reports/images/425243815.jpg" data-src="./../reports/images/425243815.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:58:52 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (0a44e0efa25dc1d3c290e726807f4b2a)] -&gt; xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight="./../reports/images/511662954.jpg" width="10%" src="./../reports/images/511662954.jpg" data-src="./../reports/images/511662954.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:58:59 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/719364470.jpg" width="10%" src="./../reports/images/719364470.jpg" data-src="./../reports/images/719364470.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:59:00 AM</td>
+													<td class='step-details'>The element 10% and above is clicked<img data-featherlight="./../reports/images/438841173.jpg" width="10%" src="./../reports/images/438841173.jpg" data-src="./../reports/images/438841173.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:59:05 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/92569847.jpg" width="10%" src="./../reports/images/92569847.jpg" data-src="./../reports/images/92569847.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:59:10 AM</td>
+													<td class='step-details'>The element Pepe Jeans Unisex Square Sunglasses Rs. 1264Rs. 2299(45% OFF) is clicked<img data-featherlight="./../reports/images/731463611.jpg" width="10%" src="./../reports/images/731463611.jpg" data-src="./../reports/images/731463611.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:59:12 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight="./../reports/images/513194731.jpg" width="10%" src="./../reports/images/513194731.jpg" data-src="./../reports/images/513194731.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:59:18 AM</td>
+													<td class='step-details'>The element is clicked<img data-featherlight="./../reports/images/736220803.jpg" width="10%" src="./../reports/images/736220803.jpg" data-src="./../reports/images/736220803.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='61'>
+					<div class='test-heading'>
+						<span class='test-name'>Order a Green Color Sunglass and compare Price of item and value in cart</span>
+						<span class='test-time'>May 21, 2018 12:15:36 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 21, 2018 12:15:36 AM</span>
+	<span class='label end-time'>May 21, 2018 12:16:27 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 50s+932ms</span>
+</div>
+	<div class='test-desc'>E:/selenium/Myntra/src/main/java/myntraFeatureFile/MyntraFeature.feature:3 </div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='62'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Order a Green Color Sunglass and compare Price of item and value in cart</h5>
+						<span class="node-time label grey lighten-1 white-text">May 21, 2018 12:16:27 AM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 50s+931ms</span>
+						<span class='test-status right pass'>pass</span>
+								<span class='category label white-text'>Smoke</span>
+								<span class='author label white-text'>Myntra</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:15:55 AM</td>
+													<td class='step-details'>The browser: chrome launched successfully<img data-featherlight='./../reports/images/223345977.jpg' width='10%' src='./../reports/images/223345977.jpg' data-src='./../reports/images/223345977.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:15:57 AM</td>
+													<td class='step-details'>The data: Sunglasses entered successfully in the field :[[ChromeDriver: chrome on XP (475915ba0e6d273a4d9cc5921c998994)] -> xpath: //*[@id='desktop-header-cnt']/div[2]/div[3]/input]<img data-featherlight='./../reports/images/245422704.jpg' width='10%' src='./../reports/images/245422704.jpg' data-src='./../reports/images/245422704.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:03 AM</td>
+													<td class='step-details'>The element  is clicked<img data-featherlight='./../reports/images/526073976.jpg' width='10%' src='./../reports/images/526073976.jpg' data-src='./../reports/images/526073976.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:04 AM</td>
+													<td class='step-details'>The element 30% and above is clicked<img data-featherlight='./../reports/images/324436916.jpg' width='10%' src='./../reports/images/324436916.jpg' data-src='./../reports/images/324436916.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:09 AM</td>
+													<td class='step-details'>The element  is clicked<img data-featherlight='./../reports/images/174382140.jpg' width='10%' src='./../reports/images/174382140.jpg' data-src='./../reports/images/174382140.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:15 AM</td>
+													<td class='step-details'>The element Tommy Hilfiger
+Unisex Oval Sunglasses
+Rs. 3967Rs. 7935(50% OFF) is clicked<img data-featherlight='./../reports/images/60250532.jpg' width='10%' src='./../reports/images/60250532.jpg' data-src='./../reports/images/60250532.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:16 AM</td>
+													<td class='step-details'>The element ADD TO BAG is clicked<img data-featherlight='./../reports/images/392518571.jpg' width='10%' src='./../reports/images/392518571.jpg' data-src='./../reports/images/392518571.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:16:27 AM</td>
+													<td class='step-details'>The element  is clicked<img data-featherlight='./../reports/images/36089273.jpg' width='10%' src='./../reports/images/36089273.jpg' data-src='./../reports/images/36089273.jpg'></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Smoke</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>May 21, 2018 12:15:36 AM</td>
+										<td class='linked' test-id='62'>Order a Green Color Sunglass and compare Price of item and value in cart.Order a Green Color Sunglass and compare Price of item and value in cart</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='author-view' class='view hide'>
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Authors' title='Search Authors'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Authors...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Authors</h5>
+                <ul id='author-collection' class='author-collection'>
+
+                        <li class='author displayed active'>
+                            <div class='author-heading'>
+                                <span class='author-name'>Myntra</span>
+                                <span class='author-status right'>
+                                        <span class='label pass'>1</span>
+						        </span>
+                            </div>
+                            <div class='author-content hide'>
+                                <div class='author-status-counts'>
+                                    <span class='label green accent-4 white-text'>Passed: 1</span>
+                                    
+                                    
+                                </div>
+
+                                <div class='author-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>May 21, 2018 12:15:36 AM</td>
+                                                <td class='linked' test-id='62'>Order a Green Color Sunglass and compare Price of item and value in cart.Order a Green Color Sunglass and compare Price of item and value in cart</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='author-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>31</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>181</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>May 21, 2018 12:15:35 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>May 21, 2018 12:16:27 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 51s+908ms</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>Smoke</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 13,
+				failParent: 18,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 18,
+				
+				passChild: 163,
+				failChild: 18,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 18,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>

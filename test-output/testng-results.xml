@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="100763" started-at="2018-06-03T16:24:17Z" finished-at="2018-06-03T16:25:57Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="100763" started-at="2018-06-03T16:24:17Z" finished-at="2018-06-03T16:25:57Z">
+      <class name="test.Test2Deliverable">
+        <test-method status="PASS" signature="myntraTest()[pri:0, instance:test.Test2Deliverable@12108b5]" name="myntraTest" duration-ms="100697" started-at="2018-06-03T21:54:17Z" finished-at="2018-06-03T21:55:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- myntraTest -->
+      </class> <!-- test.Test2Deliverable -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
